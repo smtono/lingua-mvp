@@ -24,7 +24,7 @@ class User:
     """
 
     def __init__(self,
-                 discord_ctx: dict,
+                 user_ctx: dict,
                  language: str,
                  level: int,
                  topics: list[str]):
@@ -32,12 +32,12 @@ class User:
         Initializes a User instance.
 
         Args:
-            discord_ctx (dict): Discord context or metadata for the user.
+            user_ctx (dict): Metadata for the user.
             language (str): The language the user is interested in or uses.
             level (int): The user's language proficiency level.
             topics (list[str]): List of topics the user prefers.
         """
-        self.discord_ctx = discord_ctx
+        self.user_ctx = user_ctx
         self.language = language
         self.level = level
         self.topics = topics

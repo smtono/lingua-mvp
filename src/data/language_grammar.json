@@ -1,0 +1,182 @@
+{
+  "en": {
+    "root": "Germanic",
+    "word_order": "SVO",
+    "gendered_nouns": false,
+    "script": "Latin"
+  },
+  "es": {
+    "root": "Romance",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "fr": {
+    "root": "Romance",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "de": {
+    "root": "Germanic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "it": {
+    "root": "Romance",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "pt": {
+    "root": "Romance",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "ru": {
+    "root": "Slavic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Cyrillic"
+  },
+  "ja": {
+    "root": "Japonic",
+    "word_order": "SOV",
+    "gendered_nouns": false,
+    "script": "Kanji, Hiragana, Katakana"
+  },
+  "zh": {
+    "root": "Sino-Tibetan",
+    "word_order": "SVO",
+    "gendered_nouns": false,
+    "script": "Han"
+  },
+  "ko": {
+    "root": "Koreanic",
+    "word_order": "SOV",
+    "gendered_nouns": false,
+    "script": "Hangul"
+  },
+  "ar": {
+    "root": "Semitic",
+    "word_order": "VSO (Classical), SVO (Modern)",
+    "gendered_nouns": true,
+    "script": "Arabic"
+  },
+  "tr": {
+    "root": "Turkic",
+    "word_order": "SOV",
+    "gendered_nouns": false,
+    "script": "Latin"
+  },
+  "pl": {
+    "root": "Slavic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "nl": {
+    "root": "Germanic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "sv": {
+    "root": "Germanic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "fi": {
+    "root": "Uralic",
+    "word_order": "SVO",
+    "gendered_nouns": false,
+    "script": "Latin"
+  },
+  "no": {
+    "root": "Germanic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "da": {
+    "root": "Germanic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "he": {
+    "root": "Semitic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Hebrew"
+  },
+  "hi": {
+    "root": "Indic",
+    "word_order": "SOV",
+    "gendered_nouns": true,
+    "script": "Devanagari"
+  },
+  "el": {
+    "root": "Hellenic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Greek"
+  },
+  "th": {
+    "root": "Kra-Dai",
+    "word_order": "SVO",
+    "gendered_nouns": false,
+    "script": "Thai"
+  },
+  "vi": {
+    "root": "Austroasiatic",
+    "word_order": "SVO",
+    "gendered_nouns": false,
+    "script": "Latin"
+  },
+  "id": {
+    "root": "Austronesian",
+    "word_order": "SVO",
+    "gendered_nouns": false,
+    "script": "Latin"
+  },
+  "fa": {
+    "root": "Indo-Iranian",
+    "word_order": "SOV",
+    "gendered_nouns": false,
+    "script": "Persian"
+  },
+  "ro": {
+    "root": "Romance",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "cs": {
+    "root": "Slavic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Latin"
+  },
+  "uk": {
+    "root": "Slavic",
+    "word_order": "SVO",
+    "gendered_nouns": true,
+    "script": "Cyrillic"
+  },
+  "hu": {
+    "root": "Uralic",
+    "word_order": "SVO",
+    "gendered_nouns": false,
+    "script": "Latin"
+  },
+  "tl": {
+    "root": "Austronesian",
+    "word_order": "VSO",
+    "gendered_nouns": false,
+    "script": "Latin"
+  }
+}
