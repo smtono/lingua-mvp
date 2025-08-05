@@ -17,6 +17,7 @@ Classes:
         to personalize future quizzes and monitor learning outcomes.
 """
 
+
 class User:
     """
     Represents a user interacting through Discord, including their
@@ -41,15 +42,3 @@ class User:
         self.language = language
         self.level = level
         self.topics = topics
-
-
-class PerformanceTracker:
-    """
-    Tracks user performance and manages profile updates
-        based on quiz results and activity.
-    Responsible for leveling up users, updating their profile,
-        and maintaining performance metrics.
-    """
-
-    def __init__(self):
-        pass
