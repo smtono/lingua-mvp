@@ -24,7 +24,7 @@ class Database():
             db_name: str
                 The name of the database to be created
         """
-        open(f'database/{db_name}.db', 'w+')
+        open(f'database/{db_name}.db', 'w+', encoding="UTF-8")
 
     #######################
     # Query Manipulation
