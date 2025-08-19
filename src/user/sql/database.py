@@ -2,6 +2,8 @@
 This module is used to define the database for the system
 As well as functions used to interact with the database
 This system uses a SQLite database
+
+TODO: fix warnings/more descriptive error logging
 """
 
 import logging

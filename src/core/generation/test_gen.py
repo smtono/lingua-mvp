@@ -5,3 +5,23 @@ A test will showcase the user's skill and update accordingly after the conclusio
 Test will take in user's "stats" and grab/generate data pertaining to it
 Test results will be stored and used to calculate what user needs to review
 """
+
+
+class TestGenerator:
+    """
+    Generates tests for a given User
+
+    Attributes:
+        user: User to create the test for
+        cursor: The database object to fetch user preferences and level
+    """
+
+    def __init__(self, user, cursor):
+        self.user = user
+        self.cursor = cursor
+
+    def update_user(self):
+        """Levels up user after test"""
+
+    def generate(self):
+        """Generates a test"""
