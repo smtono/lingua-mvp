@@ -1,7 +1,8 @@
 """
 Test Generation
 
-A test will showcase the user's skill and update accordingly after the conclusion of it
+A test will showcase the user's skill and
+update accordingly after the conclusion of it
 Test will take in user's "stats" and grab/generate data pertaining to it
 Test results will be stored and used to calculate what user needs to review
 """
@@ -20,8 +21,8 @@ class TestGenerator:
         self.user = user
         self.cursor = cursor
 
-    def update_user(self):
-        """Levels up user after test"""
-
     def generate(self):
         """Generates a test"""
+
+    def followup(self):
+        """Follows up after test to give increased difficulty test"""
