@@ -8,6 +8,10 @@ from abc import ABC
 class Command(ABC):
     """
     Base command with simple execute and parse functionality
+
+    Attributes:
+        command: Command module to execute
+        args: Arguments to pass to command module
     """
 
     def __init__(self, user_input: str):
