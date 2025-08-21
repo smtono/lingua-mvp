@@ -4,6 +4,8 @@ As well as functions used to interact with the database
 This system uses a SQLite database
 
 TODO: fix warnings/more descriptive error logging
+TODO: Add validation checks for queries to avoid SQL injection
+TODO: Fix raised exceptions to be more descriptive
 """
 
 import logging
@@ -13,8 +15,14 @@ from sqlite3 import Error
 class Database():
     """
     This class is used to create a database and manipulate it.
+    
+    Attributes:
+        connector: SQLite instance to connect to
+        cursor: Cursor object to execute queries with
     """
+
     def __init__(self, db_name: str) -> None:
+        # TODO: fix pathing to make generic
         self.connector = sqlite3.connect(f"src\database\{db_name}.db")
         self.cursor = self.connector.cursor()
 
@@ -26,6 +34,7 @@ class Database():
             db_name: str
                 The name of the database to be created
         """
+        # TODO: fix pathing
         open(f'database/{db_name}.db', 'w+', encoding="UTF-8")
 
     #######################
@@ -36,21 +45,17 @@ class Database():
         Selects data from a table
 
         Args:
-            query_for: str
-                The data to be queried
-            query_table: str
-                The table to be queried
+            query_for: The data to be queried
+            query_table: The table to be queried
         """
         try:
             self.cursor.execute(f"SELECT {query_for} FROM {query_table};")
             print(self.cursor.fetchall())
         except Error as err:
             if err != 0:
-                logging.warning("Problem with table Select.")
-                logging.error(f"error code: {err}")
+                logging.warning("Problem with table Select (Is query asking for correct table?)")
             else:
                 logging.error("An unknown problem has occured.")
-                raise Exception("An unknown problem has occured.")
 
     def insert_data(self, table_name: str, columns: str, data: str):
         """
@@ -68,11 +73,9 @@ class Database():
             self.cursor.execute(f"INSERT INTO {table_name} ({columns}) VALUES ({data});")
         except Error as err:
             if err != 0:
-                logging.warning("Problem with Data Insertion.")
-                logging.error(f"error code: {err}")
+                logging.warning("Problem with Data Insertion (Is table and columns correct?)")
             else:
                 logging.error("An unknown problem has occured.")
-                raise Exception("An unknown problem has occured.")
 
     def custom_query(self, sql_query:str):
         """
@@ -86,11 +89,9 @@ class Database():
             self.cursor.execute(sql_query)
         except Error as err:
             if err != 0:
-                logging.warning("Problem with Custom Query.")
-                logging.error(f"error code: {err}")
+                logging.warning("Problem with Custom Query (Incorrect command?)")
             else:
                 logging.error("An unknown problem has occured.")
-                raise Exception("An unknown problem has occured.")
 
     #######################
     # Table Manipulation
@@ -109,11 +110,9 @@ class Database():
             self.cursor.execute(f"CREATE TABLE {table_name} ({table_args});")
         except Error as err:
             if err != 0:
-                logging.warning("Table already exists.")
-                logging.error(f"error code: {err}")
+                logging.warning("Table already exists")
             else:
                 logging.error("An unknown problem has occured.")
-                raise Exception("An unknown problem has occured.")
 
     def alter_table(self, table_name: str, table_args: str):
         """
@@ -129,11 +128,9 @@ class Database():
             self.cursor.execute(f"ALTER TABLE {table_name} {table_args}")
         except Error as err:
             if err != 0:
-                logging.warning("Problem with table Alter.")
-                logging.error(f"error code: {err}")
+                logging.warning("Problem with table Alter (Is table name correct?)")
             else:
                 logging.error("An unknown problem has occured.")
-                raise Exception("An unknown problem has occured.")
 
     def delete_table(self, table_name: str):
         """
@@ -147,11 +144,9 @@ class Database():
             self.cursor.execute(f"DROP TABLE {table_name}")
         except Error as err:   
             if err != 0:
-                logging.warning("Problem with table Delete.")
-                logging.error(f"error code: {err}")
+                logging.warning("Problem with table Delete (Is table name correct?)")
             else:
                 logging.error("An unknown problem has occured.")
-                raise Exception("An unknown problem has occured.")
 
     def update_table(self, table_name:str, data_args:str):
         """
@@ -167,8 +162,6 @@ class Database():
             self.cursor.execute(f"UPDATE {table_name} SET {data_args}")
         except Error as err:   
             if err != 0:
-                logging.warning("Problem with table Update.")
-                logging.error(f"error code: {err}")
+                logging.warning("Problem with table Update (Is table name correct?)")
             else:
                 logging.error("An unknown problem has occured.")
-                raise Exception("An unknown problem has occured.")
