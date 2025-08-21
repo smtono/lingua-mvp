@@ -5,7 +5,8 @@ Updates to user preferences interacting with the database
 
 class UserPreferences:
     """
-    Changes attributes of User's preferences based on passed in User object and commands
+    Changes attributes of User's preferences
+    based on passed in User object and commands
     """
 
     def __init__(self):
