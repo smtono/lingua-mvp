@@ -10,7 +10,11 @@ class TestUserPreferences(TestCase):
     Test User preferences
     """
 
-    def test_preferences_a(self):
-        """
-        TODO: choose user preference to change
-        """
+    def test_update_context(self):
+        """Updates user_ctx"""
+
+    def test_update_languages(self):
+        """Updates user languages"""
+
+    def test_update_level(self):
+        """Updates user level"""
