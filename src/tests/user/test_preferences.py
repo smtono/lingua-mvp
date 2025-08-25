@@ -10,6 +10,9 @@ class TestUserPreferences(TestCase):
     Test User preferences
     """
 
+    ##############################
+    #   BASE CASE
+    ##############################
     def test_update_context(self):
         """Updates user_ctx"""
 
@@ -18,3 +21,9 @@ class TestUserPreferences(TestCase):
 
     def test_update_level(self):
         """Updates user level"""
+
+    ##############################
+    #   THROWS EXCEPTION
+    ##############################
+    def test_update_context_invalid(self):
+        """Test invalid case of context update"""
