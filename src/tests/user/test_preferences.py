@@ -23,7 +23,19 @@ class TestUserPreferences(TestCase):
         """Updates user level"""
 
     ##############################
+    #   SPECIAL CASE
+    ##############################
+    def test_update_context_topic(self):
+        """Tests for topic update"""
+
+    ##############################
     #   THROWS EXCEPTION
     ##############################
     def test_update_context_invalid(self):
         """Test invalid case of context update"""
+
+    def test_update_context_topic_invalid(self):
+        """Test invalid case of context for topic update"""
+
+    def test_update_languages_invalid(self):
+        """Tests for nonexistent/unsupported language"""
