@@ -39,3 +39,7 @@ class User:
     languages: list[str]
     level: int
     topics: list[str]
+
+    def update_languages(self, new_language):
+        """Check for valid language"""
+        # TODO: finish proper docstrings

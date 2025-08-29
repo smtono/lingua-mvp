@@ -33,8 +33,8 @@ class TestUserPreferences(TestCase):
 
     def test_update_languages(self):
         """Updates user languages"""
-        languages = self.dummy_user.languages
-        #self.dummy_user.
+        new_language = "korean"
+        self.dummy_user.update_languages(new_language)
 
         # Assert context changed
         # TODO
