@@ -46,3 +46,6 @@ class User:
 
     def update_topics(self):
         """Updates topics user"""
+
+    def update_languages(self):
+        """Updates language preferences"""
