@@ -37,10 +37,15 @@ class TestUserPreferences(TestCase):
         self.dummy_user.update_languages(new_language)
 
         # Assert context changed
-        # TODO
+        self.assertEqual(self.dummy_user.languages, ["en", "jp", "kr"])
 
     def test_update_level(self):
         """Updates user level"""
+        new_level = 3
+        self.dummy_user.update_level(new_level)
+
+        # Assert level changed
+        self.assertEqual(self.dummy_user.level, 3)
 
     ##############################
     #   SPECIAL CASE
