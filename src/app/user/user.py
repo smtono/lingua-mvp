@@ -48,3 +48,6 @@ class User:
 
     def update_level(self, level):
         """Updates user level/progression"""
+
+    def write_context(self):
+        """Writes current context if changed"""

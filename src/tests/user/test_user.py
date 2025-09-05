@@ -64,3 +64,14 @@ class TestUserPreferences(TestCase):
 
     def test_update_languages_invalid(self):
         """Tests for nonexistent/unsupported language"""
+
+    ##############################
+    #   DB UPDATES
+    ##############################
+    def test_write_context(self):
+        """Tests to see database updates correctly when user context changed"""
+
+    def test_write_context_fails(self):
+        """Tests to see database retain previous context
+        if current context is corrupted
+        Raises exception/writes to error logs"""
