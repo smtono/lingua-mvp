@@ -51,3 +51,4 @@ class User:
 
     def write_context(self):
         """Writes current context if changed"""
+        # Check current context against what is in DB
