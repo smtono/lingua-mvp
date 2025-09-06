@@ -52,6 +52,10 @@ class TestUserPreferences(TestCase):
     ##############################
     def test_update_context_topic(self):
         """Tests for topic update"""
+        topic = "test topic"
+        self.dummy_user.update_topics(topic)
+
+        self.assertTrue(topic in self.dummy_user.topics)
 
     ##############################
     #   THROWS EXCEPTION

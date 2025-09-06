@@ -40,8 +40,9 @@ class User:
     level: int
     topics: list[str]
 
-    def update_topics(self):
+    def update_topics(self, topic):
         """Updates topics user"""
+        # Topic check
 
     def update_languages(self, language):
         """Updates language preferences"""
