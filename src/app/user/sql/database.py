@@ -6,6 +6,7 @@ This system uses a SQLite database
 TODO: fix warnings/more descriptive error logging
 TODO: Add validation checks for queries to avoid SQL injection
 TODO: Fix raised exceptions to be more descriptive
+TODO: Fix returns for functions
 """
 
 import logging
@@ -50,12 +51,15 @@ class Database():
         """
         try:
             self.cursor.execute(f"SELECT {query_for} FROM {query_table};")
-            print(self.cursor.fetchall())
+            res = self.cursor.fetchall()
+            print(res)
+            return res
         except Error as err:
             if err != 0:
                 logging.warning("Problem with table Select (Is query asking for correct table?)")
             else:
                 logging.error("An unknown problem has occured.")
+    
 
     def insert_data(self, table_name: str, columns: str, data: str):
         """

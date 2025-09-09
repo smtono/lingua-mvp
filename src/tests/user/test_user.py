@@ -30,7 +30,7 @@ class TestUserPreferences(TestCase):
 
         # Assert context changed
         # TODO: Fix select statement
-        #updated_context = self.test_database.select_data("ctx", "user")
+        updated_context = self.test_database.select_data("ctx", "user")
         self.assertEqual(self.dummy_user.user_ctx, updated_context)
 
     def test_update_languages(self):
