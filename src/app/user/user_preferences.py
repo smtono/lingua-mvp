@@ -21,8 +21,9 @@ class UserPreferences:
         self.user = user
         self.cursor = cursor
 
-    def update_preferences(self):
+    def update_preferences(self, new_preferences):
         """Fetches User data from the DB and updates accordingly"""
+        self.user.topics.append(new_preferences)
 
     def get_preferences(self, user):
         """Fetches user data to return back to user"""
