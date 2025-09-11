@@ -11,20 +11,29 @@ TODO: Fix returns for functions
 
 import logging
 import sqlite3
+import os
 from sqlite3 import Error
+from pathlib import Path
+
 
 class Database():
     """
     This class is used to create a database and manipulate it.
-    
+
     Attributes:
         connector: SQLite instance to connect to
         cursor: Cursor object to execute queries with
     """
 
-    def __init__(self, db_name: str) -> None:
-        # TODO: fix pathing to make generic
-        self.connector = sqlite3.connect(f"src\database\{db_name}.db")
+    def __init__(self, db_name: str, path: str = None) -> None:
+        # Initialize working directory
+        if not path:
+            db_path = Path(os.getcwd(), "database")
+        else:
+            db_path = Path(path)
+
+        self.db_path = db_path
+        self.connector = sqlite3.connect(f"{db_path}/{db_name}.db")
         self.cursor = self.connector.cursor()
 
     def create_db(self, db_name: str):
@@ -35,8 +44,9 @@ class Database():
             db_name: str
                 The name of the database to be created
         """
-        # TODO: fix pathing
-        open(f'database/{db_name}.db', 'w+', encoding="UTF-8")
+        with open(f'{self.db_path}/{db_name}.db', 'w+', encoding="UTF-8"):
+            self.connector = sqlite3.connect(f"{self.db_path}/{db_name}.db")
+            self.cursor = self.connector.cursor()
 
     #######################
     # Query Manipulation
@@ -146,7 +156,7 @@ class Database():
         """
         try:
             self.cursor.execute(f"DROP TABLE {table_name}")
-        except Error as err:   
+        except Error as err:
             if err != 0:
                 logging.warning("Problem with table Delete (Is table name correct?)")
             else:
