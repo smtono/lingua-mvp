@@ -6,7 +6,6 @@ This system uses a SQLite database
 TODO: fix warnings/more descriptive error logging
 TODO: Add validation checks for queries to avoid SQL injection
 TODO: Fix raised exceptions to be more descriptive
-TODO: Fix returns for functions
 """
 
 import logging
@@ -14,6 +13,7 @@ import sqlite3
 import os
 from sqlite3 import Error
 from pathlib import Path
+from typing import Optional
 
 
 class Database():
@@ -25,7 +25,7 @@ class Database():
         cursor: Cursor object to execute queries with
     """
 
-    def __init__(self, db_name: str, path: str = None) -> None:
+    def __init__(self, db_name: str, path: Optional[str]) -> None:
         # Initialize working directory
         if not path:
             db_path = Path(os.getcwd(), "database")
@@ -66,10 +66,12 @@ class Database():
             return res
         except Error as err:
             if err != 0:
-                logging.warning("Problem with table Select (Is query asking for correct table?)")
+                logging.warning(
+                    "Problem with table Select"
+                    "(Is query asking for correct table?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
-    
 
     def insert_data(self, table_name: str, columns: str, data: str):
         """
@@ -84,14 +86,20 @@ class Database():
                 The data to be inserted
         """
         try:
-            self.cursor.execute(f"INSERT INTO {table_name} ({columns}) VALUES ({data});")
+            self.cursor.execute(
+                f"INSERT INTO {table_name}"
+                f"({columns}) VALUES ({data});"
+            )
         except Error as err:
             if err != 0:
-                logging.warning("Problem with Data Insertion (Is table and columns correct?)")
+                logging.warning(
+                    "Problem with Data Insertion"
+                    "(Is table and columns correct?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
 
-    def custom_query(self, sql_query:str):
+    def custom_query(self, sql_query: str):
         """
         Executes a custom query
 
@@ -103,7 +111,10 @@ class Database():
             self.cursor.execute(sql_query)
         except Error as err:
             if err != 0:
-                logging.warning("Problem with Custom Query (Incorrect command?)")
+                logging.warning(
+                    "Problem with Custom Query"
+                    "(Incorrect command?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
 
@@ -158,11 +169,14 @@ class Database():
             self.cursor.execute(f"DROP TABLE {table_name}")
         except Error as err:
             if err != 0:
-                logging.warning("Problem with table Delete (Is table name correct?)")
+                logging.warning(
+                    "Problem with table Delete"
+                    "(Is table name correct?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
 
-    def update_table(self, table_name:str, data_args:str):
+    def update_table(self, table_name: str, data_args: str):
         """
         Updates a table with the given name
 
@@ -176,6 +190,9 @@ class Database():
             self.cursor.execute(f"UPDATE {table_name} SET {data_args}")
         except Error as err:   
             if err != 0:
-                logging.warning("Problem with table Update (Is table name correct?)")
+                logging.warning(
+                    "Problem with table Update"
+                    "(Is table name correct?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
