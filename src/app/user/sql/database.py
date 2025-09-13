@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Optional
 
 
-class Database():
+class Database:
     """
     This class is used to create a database and manipulate it.
 
@@ -44,7 +44,7 @@ class Database():
             db_name: str
                 The name of the database to be created
         """
-        with open(f'{self.db_path}/{db_name}.db', 'w+', encoding="UTF-8"):
+        with open(f"{self.db_path}/{db_name}.db", "w+", encoding="UTF-8"):
             self.connector = sqlite3.connect(f"{self.db_path}/{db_name}.db")
             self.cursor = self.connector.cursor()
 
@@ -67,8 +67,7 @@ class Database():
         except Error as err:
             if err != 0:
                 logging.warning(
-                    "Problem with table Select"
-                    "(Is query asking for correct table?)"
+                    "Problem with table Select" "(Is query asking for correct table?)"
                 )
             else:
                 logging.error("An unknown problem has occured.")
@@ -87,14 +86,12 @@ class Database():
         """
         try:
             self.cursor.execute(
-                f"INSERT INTO {table_name}"
-                f"({columns}) VALUES ({data});"
+                f"INSERT INTO {table_name}" f"({columns}) VALUES ({data});"
             )
         except Error as err:
             if err != 0:
                 logging.warning(
-                    "Problem with Data Insertion"
-                    "(Is table and columns correct?)"
+                    "Problem with Data Insertion" "(Is table and columns correct?)"
                 )
             else:
                 logging.error("An unknown problem has occured.")
@@ -111,10 +108,7 @@ class Database():
             self.cursor.execute(sql_query)
         except Error as err:
             if err != 0:
-                logging.warning(
-                    "Problem with Custom Query"
-                    "(Incorrect command?)"
-                )
+                logging.warning("Problem with Custom Query" "(Incorrect command?)")
             else:
                 logging.error("An unknown problem has occured.")
 
@@ -169,10 +163,7 @@ class Database():
             self.cursor.execute(f"DROP TABLE {table_name}")
         except Error as err:
             if err != 0:
-                logging.warning(
-                    "Problem with table Delete"
-                    "(Is table name correct?)"
-                )
+                logging.warning("Problem with table Delete" "(Is table name correct?)")
             else:
                 logging.error("An unknown problem has occured.")
 
@@ -188,11 +179,8 @@ class Database():
         """
         try:
             self.cursor.execute(f"UPDATE {table_name} SET {data_args}")
-        except Error as err:   
+        except Error as err:
             if err != 0:
-                logging.warning(
-                    "Problem with table Update"
-                    "(Is table name correct?)"
-                )
+                logging.warning("Problem with table Update" "(Is table name correct?)")
             else:
                 logging.error("An unknown problem has occured.")
