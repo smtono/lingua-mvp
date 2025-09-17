@@ -67,7 +67,8 @@ class Database:
         except Error as err:
             if err != 0:
                 logging.warning(
-                    "Problem with table Select" "(Is query asking for correct table?)"
+                    "Problem with table Select"
+                    "(Is query asking for correct table?)"
                 )
             else:
                 logging.error("An unknown problem has occured.")
@@ -91,7 +92,8 @@ class Database:
         except Error as err:
             if err != 0:
                 logging.warning(
-                    "Problem with Data Insertion" "(Is table and columns correct?)"
+                    "Problem with Data Insertion"
+                    "(Is table and columns correct?)"
                 )
             else:
                 logging.error("An unknown problem has occured.")
@@ -108,7 +110,10 @@ class Database:
             self.cursor.execute(sql_query)
         except Error as err:
             if err != 0:
-                logging.warning("Problem with Custom Query" "(Incorrect command?)")
+                logging.warning(
+                    "Problem with Custom Query"
+                    "(Incorrect command?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
 
@@ -147,7 +152,10 @@ class Database:
             self.cursor.execute(f"ALTER TABLE {table_name} {table_args}")
         except Error as err:
             if err != 0:
-                logging.warning("Problem with table Alter (Is table name correct?)")
+                logging.warning(
+                    "Problem with table Alter"
+                    "(Is table name correct?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
 
@@ -163,7 +171,9 @@ class Database:
             self.cursor.execute(f"DROP TABLE {table_name}")
         except Error as err:
             if err != 0:
-                logging.warning("Problem with table Delete" "(Is table name correct?)")
+                logging.warning(
+                    "Problem with table Delete (Is table name correct?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
 
@@ -181,6 +191,9 @@ class Database:
             self.cursor.execute(f"UPDATE {table_name} SET {data_args}")
         except Error as err:
             if err != 0:
-                logging.warning("Problem with table Update" "(Is table name correct?)")
+                logging.warning(
+                    "Problem with table Update"
+                    "(Is table name correct?)"
+                )
             else:
                 logging.error("An unknown problem has occured.")
