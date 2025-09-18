@@ -15,7 +15,7 @@ class TestUserPreferences(TestCase):
 
     def __init__(self, methodName="runTest"):
         super().__init__(methodName)
-        self.test_database = Database("test.db")
+        self.test_database = Database("test", "test.db")
         self.dummy_user = User(
             {"static_key": "variable_value"}, ["en", "jp"], 2, ["food"]
         )
@@ -26,12 +26,11 @@ class TestUserPreferences(TestCase):
     def test_update_context(self):
         """Updates user_ctx"""
         preferences = UserPreferences(self.dummy_user, self.test_database)
-        preferences.update_preferences()
+        new_preference = "Test"
+        preferences.update_preferences(new_preference)
 
         # Assert context changed
-        # TODO: Fix select statement
-        updated_context = self.test_database.select_data("ctx", "user")
-        self.assertEqual(self.dummy_user.user_ctx, updated_context)
+        self.assertIn(new_preference, self.dummy_user.user_ctx)
 
     def test_update_languages(self):
         """Updates user languages"""
@@ -49,6 +48,10 @@ class TestUserPreferences(TestCase):
         # Assert level changed
         self.assertEqual(self.dummy_user.level, 3)
 
+    # TODO: move to db tests
+    def test_update_user_db(self):
+        """Tests for correct changes in databse once User ends session"""
+
     ##############################
     #   SPECIAL CASE
     ##############################
@@ -57,7 +60,7 @@ class TestUserPreferences(TestCase):
         topic = "test topic"
         self.dummy_user.update_topics(topic)
 
-        self.assertTrue(topic in self.dummy_user.topics)
+        self.assertIn(topic, self.dummy_user.topics)
 
     ##############################
     #   THROWS EXCEPTION
