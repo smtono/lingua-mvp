@@ -17,4 +17,7 @@ class TestUserCreation(TestCase):
         """Tests test creation with bad user data, prompting user to change"""
 
     def test_creation_advanced_level(self):
-        """Tests creation with advanced level user (taking into consideration level, topics, etc)"""
+        """
+        Tests creation with advanced level user
+        (taking into consideration level, topics, etc)
+        """
