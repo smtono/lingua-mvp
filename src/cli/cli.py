@@ -4,8 +4,11 @@ interact with database,
 test primitive functionality, etc
 """
 
-import argparse
+def create_user():
+    pass
 
+def modify_db():
+    pass
 
 
 def cli():
