@@ -10,6 +10,13 @@ def create_user():
 def modify_db():
     pass
 
+def help_verbose():
+    pass
+
+
+command_map = {
+    "help": help_verbose   
+}
 
 def cli():
     """
