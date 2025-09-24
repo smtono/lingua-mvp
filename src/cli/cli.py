@@ -4,15 +4,21 @@ interact with database,
 test primitive functionality, etc
 """
 
+from dataclasses import dataclass
+
+
+@dataclass
 class Command:
-    def user():
-        pass
+    """Commands to feed into command line interface for Lingua development"""
 
-    def db():
-        pass
+    def user(self, *args):
+        """Direct to appropriate User command"""
 
-    def help_verbose():
-        pass
+    def db(self, *args):
+        """Direct to appropriate database command"""
+
+    def help_verbose(self, *args):
+        """Print help for specified command"""
 
     command_map = {
         "help": help_verbose,
