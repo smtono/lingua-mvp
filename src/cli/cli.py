@@ -4,22 +4,29 @@ interact with database,
 test primitive functionality, etc
 """
 
-def create_user():
-    pass
+class Command:
+    def user():
+        pass
 
-def modify_db():
-    pass
+    def db():
+        pass
 
-def help_verbose():
-    pass
+    def help_verbose():
+        pass
 
+    command_map = {
+        "help": help_verbose,
+        "db": db,
+        "user": user
+    }
 
-command_map = {
-    "help": help_verbose   
-}
 
 def cli():
     """
     Driver of command line interface
     """
-    input("lingua>> ")
+    user_input = input("lingua>> ").split()
+    command = user_input[0]
+    command_args = user_input[1:]
+
+    getattr(Command, command(command_args))   
