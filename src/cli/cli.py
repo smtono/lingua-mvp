@@ -15,12 +15,20 @@ class Command:
         """Direct to appropriate User command"""
         # if "update" in args, call user_update
 
-    def user_update(self):
+    def user_create(self):
         """TODO: add appropriate args
-        Updates user with given args"""
+        Creates user with given args"""
 
     def db(self, *args):
         """Direct to appropriate database command"""
+
+    def db_user_update(self):
+        """TODO: add appropriate args
+        Updates user with given args"""
+
+    def db_user_get(self):
+        """TODO: add appropriate args
+        Fetches user with given args"""
 
     def help_verbose(self, *args):
         """Print help for specified command"""
