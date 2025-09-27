@@ -15,6 +15,9 @@ class Command:
         """Direct to appropriate User command"""
         # if "update" in args, call user_update
 
+    def user_help(self):
+        """Prints help for user command"""
+
     def user_create(self):
         """TODO: add appropriate args
         Creates user with given args"""
@@ -32,6 +35,8 @@ class Command:
 
     def help_verbose(self, *args):
         """Print help for specified command"""
+        module = args[0]
+        getattr(Command, f"{module}_help")()
 
     command_map = {
         "help": help_verbose,
