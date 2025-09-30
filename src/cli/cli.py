@@ -25,6 +25,9 @@ class Command:
     def db(self, *args):
         """Direct to appropriate database command"""
 
+    def db_help(self):
+        """Prints help for db command"""
+
     def db_user_update(self):
         """TODO: add appropriate args
         Updates user with given args"""
