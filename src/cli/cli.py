@@ -17,6 +17,7 @@ class Command:
 
     def user_help(self):
         """Prints help for user command"""
+        print("help")
 
     def user_create(self):
         """TODO: add appropriate args
@@ -27,6 +28,7 @@ class Command:
 
     def db_help(self):
         """Prints help for db command"""
+        print("help")
 
     def db_user_update(self):
         """TODO: add appropriate args
