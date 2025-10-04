@@ -17,7 +17,8 @@ class Command:
 
     def user_help(self):
         """Prints help for user command"""
-        print("help")
+        print("user")
+        print("help - Prints this command")
 
     def user_create(self):
         """TODO: add appropriate args
@@ -28,7 +29,8 @@ class Command:
 
     def db_help(self):
         """Prints help for db command"""
-        print("help")
+        print("db")
+        print("help - Prints this command")
 
     def db_user_update(self):
         """TODO: add appropriate args
@@ -58,4 +60,4 @@ def cli():
     command = user_input[0]
     command_args = user_input[1:]
 
-    getattr(Command, command(command_args))   
+    getattr(Command, command(command_args))
