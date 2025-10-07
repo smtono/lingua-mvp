@@ -14,3 +14,12 @@ class TestCli(TestCase):
         """
         Tests simple cli execution
         """
+
+    def test_user(self):
+        """
+        Tests user commands"""
+
+    def test_db(self):
+        """
+        Tests db commands
+        """

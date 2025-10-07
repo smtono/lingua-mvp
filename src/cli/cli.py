@@ -19,7 +19,7 @@ class Command:
         """Prints help for user command"""
         print("user")
         print("help - Prints this command")
-        print("create <args>- Creates a hew user")  # TODO: expand
+        print("create <args> - Creates a hew user")  # TODO: expand
 
     def user_create(self):
         """TODO: add appropriate args
