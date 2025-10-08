@@ -5,7 +5,7 @@ Test user preferences changing through CLI execution
 from unittest import TestCase
 from app.user.user_preferences import UserPreferences
 from app.user.user import User
-from app.user.sql.database import Database
+from app.sql.database import Database
 
 
 class TestUserPreferences(TestCase):

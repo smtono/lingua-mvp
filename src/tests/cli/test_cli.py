@@ -17,7 +17,13 @@ class TestCli(TestCase):
 
     def test_user(self):
         """
-        Tests user commands"""
+        Tests user commands
+        """
+
+    def test_user_create(self):
+        """
+        Tests user creation command execution
+        """
 
     def test_db(self):
         """
