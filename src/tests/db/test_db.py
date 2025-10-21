@@ -17,8 +17,10 @@ class TestDatabase(TestCase):
 
     def test_database_exists():
         """
+        Test opens database correctly
         """
 
     def test_database_nonexistent():
         """
+        Test exception thrown for non existent database
         """
