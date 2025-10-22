@@ -5,6 +5,7 @@ test primitive functionality, etc
 """
 
 from dataclasses import dataclass
+from cli.modules.user import UserCommand
 
 
 @dataclass
@@ -13,17 +14,17 @@ class Command:
 
     def user(self, *args):
         """Direct to appropriate User command"""
-        # if "update" in args, call user_update
+        command = UserCommand(*args)
+        print("...Parsing args...")
+        command.parse()
+        print("...Executing...")
+        command.execute()
 
     def user_help(self):
         """Prints help for user command"""
         print("user")
         print("help - Prints this command")
-        print("create <args> - Creates a hew user")  # TODO: expand
-
-    def user_create(self):
-        """TODO: add appropriate args
-        Creates user with given args"""
+        print("create <args> - Creates a hew user")
 
     def db(self, *args):
         """Direct to appropriate database command"""
@@ -32,14 +33,6 @@ class Command:
         """Prints help for db command"""
         print("db")
         print("help - Prints this command")
-
-    def db_user_update(self):
-        """TODO: add appropriate args
-        Updates user with given args"""
-
-    def db_user_get(self):
-        """TODO: add appropriate args
-        Fetches user with given args"""
 
     def help_verbose(self, *args):
         """Print help for specified command"""
