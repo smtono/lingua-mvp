@@ -23,6 +23,9 @@ class TestUserPreferences(TestCase):
     ##############################
     #   BASE CASE
     ##############################
+    def test_parse_kwargs(self):
+        """Test correct parsing of user passed arguments"""
+
     def test_update_context(self):
         """Updates user_ctx"""
         preferences = UserPreferences(self.dummy_user, self.test_database)
