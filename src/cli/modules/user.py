@@ -21,7 +21,7 @@ class UserCommand(Command):
                 pass
             case "delete":  # Deletes existing user
                 pass
-            case "":
+            case "update":  # Updates user
                 pass
             case _:  # Either error or unsupported
                 print("todo")
