@@ -18,10 +18,13 @@ class UserCommand(Command):
 
         match command:
             case "create":  # Create new user
+                # create <user> <{ctx}> <[languages]> <level> <[topics]>
                 pass
             case "delete":  # Deletes existing user
+                # delete <userId>
                 pass
             case "update":  # Updates user
+                # update <userId> <attribute> <change>
                 pass
             case _:  # Either error or unsupported
                 print("todo")
