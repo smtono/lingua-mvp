@@ -15,17 +15,25 @@ class UserCommand(Command):
     def parse(self):
         # Parse user args further for correct execution
         command = self.args[0]
+        cmd_args = self.args[1:]
+
+        # Validate cmd args
 
         match command:
             case "create":  # Create new user
                 # create <user> <{ctx}> <[languages]> <level> <[topics]>
-                pass
+                ctx = ""
+                languages = ""
+                level = 0
+                topics = ""
             case "delete":  # Deletes existing user
                 # delete <userId>
-                pass
+                userId = cmd_args[0]
             case "update":  # Updates user
                 # update <userId> <attribute> <change>
-                pass
+                userId = cmd_args[0]
+                attribute = cmd_args[1]
+                change = cmd_args[2:]
             case _:  # Either error or unsupported
                 print("todo")
 
