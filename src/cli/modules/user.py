@@ -26,16 +26,25 @@ class UserCommand(Command):
                 languages = ""
                 level = 0
                 topics = ""
+                self.execute_create()
             case "delete":  # Deletes existing user
                 # delete <userId>
                 userId = cmd_args[0]
+                self.execute_delete()
             case "update":  # Updates user
                 # update <userId> <attribute> <change>
                 userId = cmd_args[0]
                 attribute = cmd_args[1]
                 change = cmd_args[2:]
+                self.execute_update()
             case _:  # Either error or unsupported
                 print("todo")
 
-    def execute(self):
+    def execute_create(self):
+        pass
+
+    def execute_delete(self):
+        pass
+    
+    def execute_update(self):
         pass
