@@ -3,6 +3,7 @@ User commands for CLI
 """
 
 from cli.modules.command import Command
+from app.sql.database import Database
 
 
 class UserCommand(Command):
@@ -10,7 +11,12 @@ class UserCommand(Command):
     User preferences command, edits user data
 
     Attributes:
+        db: User table in database
     """
+
+    def __init__(self, user_input):
+        super().__init__(user_input)
+        self.db = Database("", "")
 
     def parse(self):
         # Parse user args further for correct execution
@@ -41,7 +47,7 @@ class UserCommand(Command):
                 print("todo")
 
     def execute_create(self):
-        pass
+        self.db.insert_data("", "", "")
 
     def execute_delete(self):
         pass
