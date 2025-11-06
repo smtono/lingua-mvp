@@ -50,7 +50,7 @@ class UserCommand(Command):
         self.db.insert_data("", "", "")
 
     def execute_delete(self):
-        pass
+        self.db.update_table("", "")
     
     def execute_update(self):
         pass
