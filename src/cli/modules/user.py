@@ -51,6 +51,6 @@ class UserCommand(Command):
 
     def execute_delete(self):
         self.db.update_table("", "")
-    
+
     def execute_update(self):
-        pass
+        self.db.update_table("", "")
