@@ -25,6 +25,7 @@ class Database:
         cursor: Cursor object to execute queries with
     """
 
+    # TODO: fix to user Path instead of string manip
     def __init__(self, db_name: str, path: Optional[str]) -> None:
         # Initialize working directory
         if not path:

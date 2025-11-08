@@ -2,6 +2,10 @@
 User commands for CLI
 """
 
+import os
+
+from pathlib import Path
+
 from cli.modules.command import Command
 from app.sql.database import Database
 
@@ -16,7 +20,7 @@ class UserCommand(Command):
 
     def __init__(self, user_input):
         super().__init__(user_input)
-        self.db = Database("", "")
+        self.db = Database("", Path(os.getcwd(), "app", "db", "users"))
 
     def parse(self):
         # Parse user args further for correct execution
