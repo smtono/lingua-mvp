@@ -13,3 +13,8 @@ user create --json \
 user create Test ctx test test test test languages test test test test topics test test 10
 user delete TestDelete
 user update TestUpdate language English
+
+user update --json
+{
+    "Stuff": "Test"
+}
