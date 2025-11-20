@@ -32,23 +32,25 @@ class UserCommand(Command):
         match command:
             case "create":  # Create new user
                 # create <user> <{ctx}> <[languages]> <level> <[topics]>
-                ctx = ""
-                languages = ""
-                level = 0
-                topics = ""
+                flags = ""
                 self.execute_create()
             case "delete":  # Deletes existing user
                 # delete <userId>
-                userId = cmd_args[0]
                 self.execute_delete()
             case "update":  # Updates user
                 # update <userId> <attribute> <change>
-                userId = cmd_args[0]
-                attribute = cmd_args[1]
-                change = cmd_args[2:]
                 self.execute_update()
             case _:  # Either error or unsupported
                 print("todo")
+
+    def parse_create(self):
+        pass
+    
+    def parse_delete(self):
+        pass
+    
+    def parse_update(self):
+        pass
 
     def execute_create(self):
         self.db.insert_data("", "", "")
