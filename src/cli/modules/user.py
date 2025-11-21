@@ -43,12 +43,18 @@ class UserCommand(Command):
             case _:  # Either error or unsupported
                 print("todo")
 
-    def parse_create(self):
-        pass
-    
+    def parse_create(self, possible_args):
+        flags = ["json"]
+        for arg in possible_args:
+            if "--" in arg:
+                if arg[1:] == "json":
+                    pass
+                else:
+                    print(f"invalid flag {arg}")
+
     def parse_delete(self):
         pass
-    
+
     def parse_update(self):
         pass
 
