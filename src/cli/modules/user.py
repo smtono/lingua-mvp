@@ -50,7 +50,7 @@ class UserCommand(Command):
                 if arg[1:] == "json":
                     pass
                 else:
-                    print(f"invalid flag {arg}")
+                    print(f"ERROR: invalid flag {arg}")
 
     def parse_delete(self):
         pass
