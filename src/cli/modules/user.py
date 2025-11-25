@@ -27,6 +27,9 @@ class UserCommand(Command):
         command = self.args[0]
         cmd_args = self.args[1:]
 
+
+        # Parse flags
+
         # Validate cmd args
 
         match command:
