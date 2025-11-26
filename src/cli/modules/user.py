@@ -27,8 +27,15 @@ class UserCommand(Command):
         command = self.args[0]
         cmd_args = self.args[1:]
 
+        # Further parse args for command
+        subcommand = ""
+        subcommand_flags = {}
+
 
         # Parse flags
+        flags = []
+        while possible_arg in cmd_args:
+            if "--" in possible_arg
 
         # Validate cmd args
 
