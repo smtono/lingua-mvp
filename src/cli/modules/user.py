@@ -27,28 +27,20 @@ class UserCommand(Command):
         command = self.args[0]
         cmd_args = self.args[1:]
 
-        # Further parse args for command
-        subcommand = ""
-        subcommand_flags = {}
-
-
-        # Parse flags
-        flags = []
-        while possible_arg in cmd_args:
-            if "--" in possible_arg
-
         # Validate cmd args
-
         match command:
             case "create":  # Create new user
                 # create <user> <{ctx}> <[languages]> <level> <[topics]>
                 flags = ""
+                user = cmd_args[0]
                 self.execute_create()
             case "delete":  # Deletes existing user
                 # delete <userId>
+                user = cmd_args[0]
                 self.execute_delete()
             case "update":  # Updates user
                 # update <userId> <attribute> <change>
+                user = cmd_args[0]
                 self.execute_update()
             case _:  # Either error or unsupported
                 print("todo")
