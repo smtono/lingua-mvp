@@ -13,3 +13,6 @@ The current functionality of this experimental build includes:
 
 Currently, the functionality of Lingua is all done through its command line interface (CLI).
 
+## Usage
+
+- Go to lingua-mvp/src/cli/cli.py and start from there
